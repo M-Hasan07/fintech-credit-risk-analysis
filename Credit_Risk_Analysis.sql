@@ -1,0 +1,1 @@
+select* from "Credit_Risk_Analysis" limit 20
