@@ -76,9 +76,9 @@ WHEN person_age BETWEEN 25 AND age_group ORDER BY default_rate_pct DESC;
 
 -- 14. What volume of loans originate from renters with high loan-to-income ratios (>0.4)?
 SELECT COUNT(*) as high_risk_renter_count 
-FROM credit_risk_data 
+FROM "Credit_Risk_Analysis" 
 WHERE person_home_ownership = 'RENT' AND loan_percent_income > 0.4 AND loan_status = 1;
 
 -- 15. What is average loan size requested across different loan intents?
 SELECT loan_intent, ROUND(AVG(loan_amnt)::numeric, 2) as avg_loan_amount 
-FROM credit_risk_data GROUP BY loan_intent ORDER BY avg_loan_amount DESC;
+FROM "Credit_Risk_Analysis" GROUP BY loan_intent ORDER BY avg_loan_amount DESC;
